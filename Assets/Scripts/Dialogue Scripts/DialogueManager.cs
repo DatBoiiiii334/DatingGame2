@@ -53,8 +53,8 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        string sentence = sentences.Dequeue();
-        StopTyping(sentence);
+        //string sentence = sentences.Dequeue();
+        //StopTyping(sentence);
         
     }
 

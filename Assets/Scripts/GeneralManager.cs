@@ -26,12 +26,13 @@ public class GeneralManager : MonoBehaviour
 
 
     //______Reference to other scripts_____
-    BackgroundManager _backgroundManager;
+    Stats_Manager _stats_Manager;
+
     public Animator Fade_Animator;
 
     void Start()
     {
-        _backgroundManager = GetComponent<BackgroundManager>();
+        _stats_Manager = GetComponent<Stats_Manager>();
         //Fade_Animator = GetComponent<Animator>();
         CurrentPos = Bar;
     }
@@ -105,6 +106,7 @@ public class GeneralManager : MonoBehaviour
     {
         Map.SetActive(false);
         Map_On = false;
+        
 
         if (Location_Bar) {
             StartCoroutine(Fade(CurrentPos, Bar));
@@ -121,6 +123,7 @@ public class GeneralManager : MonoBehaviour
         Fade_Animator.SetBool("GoToBlack", true);
         yield return new WaitForSeconds(1);
         Fade_Animator.SetBool("GoToBlack", false);
+        _stats_Manager.CurrentTime += 1;
 
         yield return null;
         CurrentBG.SetActive(false);

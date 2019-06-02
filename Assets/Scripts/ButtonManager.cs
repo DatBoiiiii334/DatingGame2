@@ -10,10 +10,9 @@ public class ButtonManager : MonoBehaviour
     public GameObject ControlScreen;
     private bool _ControlScreenOn;
 
-    private void Update()
-    {
-        
-    }
+    public GameObject SkillScreen;
+    public GameObject MapScreen;
+
 
     public void SoundClick()
     {
@@ -37,5 +36,25 @@ public class ButtonManager : MonoBehaviour
             _ControlScreenOn = false;
             ControlScreen.SetActive(false);
         }
+    }
+
+    public void SkillScreenClick()
+    {
+        SkillScreen.SetActive(true);
+    }
+
+    public void SkillScreenBack()
+    {
+        SkillScreen.SetActive(false);
+    }
+
+    public void MapScreenClick()
+    {
+        MapScreen.SetActive(true);
+    }
+
+    public void MapScreenBack()
+    {
+        MapScreen.SetActive(false);
     }
 }
